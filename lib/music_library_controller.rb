@@ -16,9 +16,9 @@ class MusicLibraryController
     user_input = gets.chomp
     while user_input != 'exit'
       user_input = gets.chomp
-    end
-    if user_input == 'list songs'
-      list_songs
+      if user_input == 'list songs'
+        self.list_songs
+      end
     end
   end
 
