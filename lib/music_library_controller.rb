@@ -63,6 +63,8 @@ class MusicLibraryController
     puts "Which song number would you like to play?"
     user_selection = gets.chomp.to_i
     song = Song.all.sort_by{ |song| song.name }[user_selection - 1]
-    puts "Playing #{song.name} by #{song.artist.name}"
+    if song.instance_of? Song
+      puts "Playing #{song.name} by #{song.artist.name}"
+    end
   end
 end
