@@ -17,7 +17,7 @@ class MusicLibraryController
     while user_input != 'exit'
       user_input = gets.chomp
     end
-    user_input
+    self.send("#{user_input.split(" ").join("_")}")
   end
 
   def list_songs
