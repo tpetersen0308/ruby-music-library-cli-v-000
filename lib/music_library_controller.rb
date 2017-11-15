@@ -41,7 +41,7 @@ class MusicLibraryController
     puts "Please enter the name of an artist:"
     user_artist = gets.strip
 
-    until valid_artist?(user_artist)
+    while !valid_artist?(user_artist)
       puts "Please enter the name of an artist:"
       user_artist = gets.strip
     end
