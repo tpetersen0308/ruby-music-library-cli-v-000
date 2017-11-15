@@ -68,5 +68,3 @@ class MusicLibraryController
     end
   end
 end
-
-MusicLibraryController.new.call
