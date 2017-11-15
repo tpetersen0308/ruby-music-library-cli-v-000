@@ -16,7 +16,7 @@ class MusicLibraryController
     user_input = gets.chomp
     while user_input != 'exit'
       method_name = user_input.gsub(" ", "_")
-      if self.local_methods.include?(method_name)
+      if self.instance_methods.include?(method_name)
         self.send("#{method_name}")
       end
       #if user_input == 'list songs'
