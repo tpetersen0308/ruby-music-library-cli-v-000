@@ -15,7 +15,10 @@ class MusicLibraryController
     puts "What would you like to do?"
     user_input = gets.chomp
     while user_input != 'exit'
-      self.send("#{user_input.gsub(" ", "_")}")
+      method_name = user_input.gsub(" ", "_")
+      if self.local_methods.include?(method_name)
+        self.send("#{method_name}")
+      end
       #if user_input == 'list songs'
       #  self.list_songs
       #end
