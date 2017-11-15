@@ -52,10 +52,6 @@ class MusicLibraryController
   end
 
   def valid_artist?(user_input)
-    if Artist.all.any? { |artist| artist.name == user_input }
-      true
-    else
-      false
-    end
+    Artist.all.any? { |artist| artist.name == user_input }
   end
 end
