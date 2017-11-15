@@ -15,10 +15,10 @@ class MusicLibraryController
     puts "What would you like to do?"
     user_input = gets.chomp
     while user_input != 'exit'
-      user_input = gets.chomp
       if user_input == 'list songs'
         self.list_songs
       end
+      user_input = gets.chomp
     end
   end
 
