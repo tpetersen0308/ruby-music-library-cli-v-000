@@ -2,6 +2,4 @@
 
 require_relative '../config/environment'
 
-user_input = MusicLibraryController.new.call
-
-binding.pry
+MusicLibraryController.new.call
