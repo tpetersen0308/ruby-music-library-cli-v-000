@@ -54,7 +54,7 @@ class MusicLibraryController
 
     if Genre.all.any?{ |genre| genre.name == user_genre }
       Genre.all.detect{ |genre| genre.name == user_genre }.songs.sort_by{ |song| song.name }.each.with_index do |song, index|
-        puts "#{index + 1}. #{song.name} - #{song.artist.name}"
+        puts "#{index + 1}. #{song.artist.name} - #{song.name}"
       end
     end
   end
