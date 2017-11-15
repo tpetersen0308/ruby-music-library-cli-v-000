@@ -41,7 +41,7 @@ class MusicLibraryController
     puts "Please enter the name of an artist:"
     user_artist = gets.chomp
 
-    while !valid_artist?(user_artist)
+    until Artist.all.any?{ |artist| artist.name == user_artist }
       puts "Please enter the name of an artist:"
       user_artist = gets.chomp
     end
