@@ -41,14 +41,14 @@ class MusicLibraryController
     puts "Please enter the name of an artist:"
     user_artist = gets.chomp
 
-    until Artist.all.any?{ |artist| artist.name == user_artist }
-      puts "Please enter the name of an artist:"
-      user_artist = gets.chomp
-      binding.pry
-    end
+    if Artist.all.any?{ |artist| artist.name == user_artist }
+    #  puts "Please enter the name of an artist:"
+    #  user_artist = gets.chomp
+    
 
-    Artist.all.detect{ |artist| artist.name == user_artist }.songs.sort_by{ |song| song.name }.each.with_index do |song, index|
-      puts "#{index + 1}. #{song.name} - #{song.genre.name}"
+      Artist.all.detect{ |artist| artist.name == user_artist }.songs.sort_by{ |song| song.name }.each.with_index do |song, index|
+        puts "#{index + 1}. #{song.name} - #{song.genre.name}"
+      end
     end
   end
 
