@@ -20,7 +20,7 @@ class MusicLibraryController
       self.list_genres if user_input == 'list genres'
       self.list_songs_by_artist if user_input == 'list artist'
       self.list_songs_by_genre if user_input == 'list genre'
-      self.play_song if user_input == 'play songs'
+      self.play_song if user_input == 'play song'
       user_input = gets.chomp
     end
   end
