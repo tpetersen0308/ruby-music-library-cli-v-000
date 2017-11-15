@@ -15,7 +15,7 @@ class MusicLibraryController
     puts "What would you like to do?"
     user_input = gets.chomp
     while user_input != 'exit'
-      method_name = user_input.gsub(" ", "_")
+      method_name = user_input.gsub(" ", "_").to_sym
       if self.instance_methods.include?(method_name)
         self.send("#{method_name}")
       end
