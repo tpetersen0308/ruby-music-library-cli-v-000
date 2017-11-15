@@ -39,10 +39,23 @@ class MusicLibraryController
 
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
-    artist = gets.chomp
+    user_artist = gets.chomp
+
+    until valid_artist?(user_artist)
+      puts "Please enter the name of an artist:"
+      user_artist = gets.chomp
+    end
 
     Artist.all.detect{ |artist| artist.name == artist }.songs.sort_by{ |song| song.name }.each.with_index do |song, index|
       puts "#{index + 1}. #{song.name}"
+    end
+  end
+
+  def valid_artist?(user_input)
+    if Artist.all.detect{ |artist| artist.name == user_input }
+      true
+    else
+      false
     end
   end
 end
