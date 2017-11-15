@@ -44,6 +44,7 @@ class MusicLibraryController
     until Artist.all.any?{ |artist| artist.name == user_artist }
       puts "Please enter the name of an artist:"
       user_artist = gets.chomp
+      binding.pry
     end
 
     Artist.all.detect{ |artist| artist.name == user_artist }.songs.sort_by{ |song| song.name }.each.with_index do |song, index|
