@@ -2,4 +2,4 @@
 
 require_relative '../config/environment'
 
-MusicLibraryController.new.call
+music_library_controller = MusicLibraryController.new.call
