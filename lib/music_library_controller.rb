@@ -39,9 +39,9 @@ class MusicLibraryController
 
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
-    #gets.chomp
+    artist = gets.chomp
 
-    Artist.all.detect{ |artist| artist.name == gets.chomp }.songs.sort_by{ |song| song.name }.each.with_index do |song, index|
+    Artist.all.detect{ |artist| artist.name == artist }.songs.sort_by{ |song| song.name }.each.with_index do |song, index|
       puts "#{index + 1}. #{song.name}"
     end
   end
