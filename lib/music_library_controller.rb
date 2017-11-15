@@ -17,6 +17,7 @@ class MusicLibraryController
     while user_input != 'exit'
       user_input = gets.chomp
     end
+    user_input
   end
 
   def list_songs
