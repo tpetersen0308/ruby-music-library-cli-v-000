@@ -61,7 +61,7 @@ class MusicLibraryController
 
   def play_song
     puts "Which song number would you like to play?"
-    user_selection = gets.chomp
+    user_selection = gets.chomp.to_i
     song = Song.all.sort_by{ |song| song.name }[user_selection - 1]
     puts "Playing #{song.name} by #{song.artist.name}"
   end
