@@ -41,9 +41,9 @@ class MusicLibraryController
     puts "Please enter the name of an artist:"
     user_artist = gets.chomp
 
+    binding.pry
 
-
-    Artist.all.detect{ |artist| artist.name == user_artist.to_s }.songs.sort_by{ |song| song.name }.each.with_index do |song, index|
+    Artist.all.detect{ |artist| artist.name == user_artist }.songs.sort_by{ |song| song.name }.each.with_index do |song, index|
       puts "#{index + 1}. #{song.name}"
     end
   end
