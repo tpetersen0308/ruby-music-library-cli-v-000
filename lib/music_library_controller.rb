@@ -20,7 +20,10 @@ class MusicLibraryController
       self.list_genres if user_input == 'list genres'
       self.list_songs_by_artist if user_input == 'list artist'
       self.list_songs_by_genre if user_input == 'list genre'
-      self.play_song if user_input == 'play song'
+      if user_input == 'play song'
+        self.list_songs
+        self.play_song
+      end
       user_input = gets.chomp
     end
   end
@@ -66,7 +69,6 @@ class MusicLibraryController
   end
 
   def play_song
-    self.list_songs
     puts "Which song number would you like to play?"
     user_selection = gets.chomp.to_i
     song = Song.all.sort_by{ |song| song.name }[user_selection - 1]
